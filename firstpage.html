@@ -1,0 +1,80 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<noscript>
+<meta http-equiv="refresh" content="285">
+</noscript>
+<script type="text/javascript"> setTimeout(function() { window.location = window.location; }, 285000); </script>
+
+<link rel="stylesheet" type="text/css" href="/static/css/sanitize.26b8dd15.css">
+<link rel="stylesheet" type="text/css" href="/static/css/select2.d4457111.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.957ff3e2.css">
+
+<title>Power Controller</title>
+<script type="text/javascript" src="/static/js/md5.0df4dd77.js"></script>
+<script type="text/javascript">
+<!--
+window.addEventListener && window.addEventListener("pageshow", function(event)
+{
+    if (event.persisted || (window.performance && window.performance.navigation && window.performance.navigation.type === 2))
+    {
+        /* Reload on attempts to go back to this page to obtain a new challenge. */
+        window.location = window.location;
+    }
+});
+function calcResponse(){
+var str;
+str=document.login.Challenge.value+document.login.Username.value+document.login.Password.value+document.login.Challenge.value;
+document.secin.Password.value = hex_md5(str);
+document.secin.Username.value = document.login.Username.value;
+document.secin.submit();
+}//-->
+</script>
+</head>
+<body>
+<noscript>
+<table class="compact form">
+<tr><td class="error border">&nbsp;</td></tr>
+<tr><td class="error message"><h1>Warning: Insecure Authentication</h1></td></tr>
+<tr><td class="error border">&nbsp;</td></tr></table>
+</noscript>
+<table class="page"><tr><td>
+<form name="login" id="login" action="/login.tgi" method="post" accept-charset="UTF-8">
+<table class="compact form">
+<tr>
+<td>User Name</td>
+<td><input type="text" name="Username" value="" size="16"></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="Password" size="16"></td>
+</tr>
+<tr class="right">
+<td></td>
+<td><input onClick="calcResponse(); return false;" type="Submit" value="OK">
+<input type="hidden" name="Challenge" value="NTyT6NrpPPPWyuNX">
+</td></tr>
+</table>
+</form>
+</td></tr></table>
+<script type="text/javascript">
+<!--
+document.login.Username.focus();
+//-->
+</script>
+<form name="secin" id="secin" action="/login.tgi" method="post" accept-charset="UTF-8">
+<div style="display:none">
+<input type="hidden" name="Username">
+<input type="hidden" name="Password">
+<input type="submit">
+</div>
+</form>
+</body>
+</html>

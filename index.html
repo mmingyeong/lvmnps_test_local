@@ -1,0 +1,387 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<noscript>
+<meta http-equiv="refresh" content="60">
+</noscript>
+<script type="text/javascript"> window.refreshTimeoutValue = 60000; window.refreshTimeout = setTimeout(function() { window.location = window.location; }, window.refreshTimeoutValue); </script>
+
+
+<link rel="stylesheet" type="text/css" href="/static/css/sanitize.26b8dd15.css">
+<link rel="stylesheet" type="text/css" href="/static/css/select2.d4457111.css">
+<link rel="stylesheet" type="text/css" href="/static/css/style.957ff3e2.css">
+
+<title>Outlet Control  - DLI Controller</title>
+
+<script type="text/javascript" src="/static/js/md5.0df4dd77.js"></script>
+<script type="text/javascript" src="/static/js/jquery.4f252523.js"></script>
+<script type="text/javascript" src="/static/js/jquery.json.886a032e.js"></script>
+<script type="text/javascript" src="/static/js/select2.26abb17f.js"></script>
+<script type="text/javascript">
+var dli={
+    serialNumber:"LPC92603001100" ,
+    outletLabel:"Outlet" ,
+    session: { expiry_time: new Date().getTime()+(1795)*1000 }
+};
+</script>
+<script type="text/javascript" src="/static/js/core.4f8fca4b.js"></script>
+
+<script type="text/javascript" src="/static/js/sockette.4ac0065b.js"></script>
+<script type="text/javascript" src="/static/js/lib.d210ece6.js"></script>
+<script type="text/javascript">window.outletStateRefreshSufficient=true;</script>
+<script type="text/javascript">
+
+var lib = window.require("/lib-js/lib.js");
+window.coap_rest = lib.coap_rest;
+
+</script>
+</head>
+<!-- state=10 lock=00 -->
+<body>
+<table class="page">
+<tr>
+
+<td class="navbar">
+    <!-- menu -->
+    <table class="menu">
+    <tr><td class="item">
+    <table class="menuInner">
+
+
+    <tr><td class="centered">
+    <table><tr><td><a href="http://www.digital-loggers.com/O.html"><img src="/static/images/logo.e116d9b4.gif" width="195" height="65" alt="Digital Loggers, Inc."></a></td>
+    <td class="brand title">Web Power Switch</td></tr></table>
+    <hr>
+    </td></tr>
+
+
+<tr><td><a href="/index.htm">Outlet Control</a></td></tr>
+<tr><td><a href="/admin.htm">Setup</a></td></tr>
+<tr><td><a href="/script.htm">Scripting</a></td></tr>
+
+<tr><td><a href="/notification.htm">Event Notification</a></td></tr>
+<tr><td><a href="/customize.htm">Customization</a></td></tr>
+<tr><td><a href="/apis.htm">External APIs</a></td></tr>
+<tr><td><a href="/backup.htm">Backup/Restore</a></td></tr>
+
+<tr><td><a href="/firmware_upload.htm">Firmware Upload</a></td></tr>
+
+<tr><td><a href="/rtc.htm">Date/Time</a></td></tr>
+
+<tr><td><a href="/ap.htm">AutoPing</a></td></tr>
+
+
+<tr><td><a href="/meters.htm">Energy Monitor</a></td></tr>
+
+
+<tr><td><a href="/syslog.htm">System Log</a></td></tr>
+<tr><td><a href="/logout">Logout</a></td></tr>
+<tr><td><a href="/support.htm">Support</a></td></tr>
+<tr><td><a href="/guide/html/basic.html#basic_switch_operation" target="_blank">Help</a></td></tr>
+<tr><td><hr></td></tr>
+
+
+<tr><td class="allowWrap command-link-container"><a href="http://www.digital-loggers.com/LPC9man.pdf">Manual</a></td></tr>
+
+<tr><td class="allowWrap command-link-container"><a href="http://www.digital-loggers.com/LPC9FAQs.html">FAQ</a></td></tr>
+
+<tr><td class="allowWrap command-link-container"><a href="http://www.digital-loggers.com/LPC9.html">Product Information</a></td></tr>
+
+<tr><td class="allowWrap command-link-container"><a href="http://www.digital-loggers.com/O.html">Digital Loggers, Inc.</a></td></tr>
+
+
+    </table>
+    </td></tr>
+
+
+    <tr><td class="footer">
+    <small>Version 1.9.17.0 / 1.9.17.0  </small>
+    </td></tr>
+    <tr><td class="footer">
+    <small>S/N:LPC92603001100</small>
+    </td></tr>
+
+    </table>
+    <!-- /menu -->
+</td>
+
+<td class="content">
+
+
+    <!-- heading table -->
+    <table class="heading">
+	
+<tr><td class="welcome border">&nbsp;</td></tr>
+<tr><td class="welcome message">
+<h1>Welcome!</h1>
+<p>Thanks for purchasing from us. Please register your device so we can serve you better with:
+<ul>
+<li>FREE Technical Support</li>
+<li>Priority Update Notices</li>
+<li>Special Software Offers</li>
+</ul>
+<form action="reg.cgi" method="post" accept-charset="UTF-8">
+<input id="dli-registration-button" type="submit" name="now" value="Register NOW">
+<input type="submit" name="skip" value="Skip Registration">
+<input type="submit" name="later" value="Ask Me Later">
+</form>
+</td></tr>
+<tr><td class="welcome border">&nbsp;</td></tr>
+
+        <tr>
+        <th class="header">
+        Controller: DLI Controller
+        <div id="protection_status">
+
+        <span class="icon imageReplaced prot-off" title="No protection bits effective"></span>
+        <div class="details">
+
+        <pre class="prot-off">Administrator credentials protection is disabled</pre>
+
+        <pre class="prot-off">Protection from restore from backup is disabled</pre>
+
+        <pre class="prot-off">Notification settings protection is disabled</pre>
+
+        <pre class="prot-off">Private configuration protection is disabled</pre>
+
+        <pre class="prot-off">Firmware protection is disabled</pre>
+
+        <pre class="prot-off">Maintenance mode lock is disabled</pre>
+
+        <pre class="prot-off">Network settings protection is disabled</pre>
+
+        </div>
+        </div>
+        </th>
+        </tr>
+
+        <tr class="uptime">
+        <td>
+        Fri Jul  9 08:07:54 2021 <!-- 269985.78s up -->
+
+        <div id="session_timer">Session expires in <span class="timeout">00:29:55</span></div>
+
+        </td>
+        </tr>
+
+    </table>
+    <!-- /heading table -->
+
+
+    <br>
+
+    <!-- individual control table -->
+    <table class="form command-link-container">
+        <colgroup width="5%"></colgroup>
+        <colgroup width="35%"></colgroup>
+        <colgroup span="3" width="20%"></colgroup>
+        <tr>
+        <td class="header" colspan="5">
+        Individual Control
+        </td>
+        </tr>
+
+        <!-- heading rows -->
+        <tr class="subheader">
+        <th class="centered">#</th>
+        <th>Name</th>
+        <th>State</th>
+        <th colspan="2">Action</th>
+        </tr>
+        <!-- /heading rows -->
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="0"  data-outlet-state-row="0"><td class="centered">1</td>
+<td>Outlet 1</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?1=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?1=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="1"  data-outlet-state-row="1"><td class="centered">2</td>
+<td>Outlet 2</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?2=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?2=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="2"  data-outlet-state-row="2"><td class="centered">3</td>
+<td>Outlet 3</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?3=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?3=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="3"  data-outlet-state-row="3"><td class="centered">4</td>
+<td>Outlet 4</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?4=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?4=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="4"  data-outlet-state-row="4"><td class="centered">5</td>
+<td>Outlet 5</td><td>
+
+<b><font color="green">ON</font></b>
+</td><td>
+
+    <a  href="outlet?5=OFF">Switch OFF</a>
+
+</td><td>
+
+<a  href="outlet?5=CCL">Cycle</a>
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="5"  data-outlet-state-row="5"><td class="centered">6</td>
+<td>Outlet 6</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?6=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?6=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="6"  data-outlet-state-row="6"><td class="centered">7</td>
+<td>Outlet 7</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?7=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?7=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+<tr class="item outlet-state-row" data-outlet-state-web-ui-row="7"  data-outlet-state-row="7"><td class="centered">8</td>
+<td>Outlet 8</td><td>
+
+<b><font color="red">OFF</font></b>
+</td><td>
+
+    <a  href="outlet?8=ON">Switch ON</a>
+
+</td><td>
+
+<!-- 
+
+<a  href="outlet?8=CCL">Cycle</a>
+
+ -->
+
+</td></tr>
+
+
+
+    </table>
+    <!-- /individual control table -->
+
+    <br>
+
+<table class="form command-link-container">
+<tr><td class="header">Master Control</td></tr>
+<tr><td class="item">
+<a 
+data-confirm="You are going to switch all outlets OFF. Continue?"
+ href="outlet?a=OFF">All outlets OFF</a>
+</td></tr>
+<tr><td class="item">
+    <a href="outlet?a=ON">All outlets ON</a>
+</td></tr>
+<tr><td class="item">
+<a 
+data-confirm="You are going to cycle all outlets. Continue?"
+ href="outlet?a=CCL">Cycle all outlets</a>
+</td></tr>
+<tr><td class="centered">Sequence delay: 3 sec.</td></tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
