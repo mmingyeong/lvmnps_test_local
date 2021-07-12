@@ -1,0 +1,7 @@
+switches:
+    nps1:
+        type: dli
+        host: 163.180.145.123
+        port: 80
+        user: 'admin'
+        password: 'irlab'
