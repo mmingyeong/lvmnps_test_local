@@ -21,10 +21,10 @@ async def main():
     headers = {'User-Agent': 'Mozilla/5.0', 'Content-Type': 'application/x-www-form-urlencoded'}
 
     #get http response
-    async with httpx.AsyncClient(auth=auth) as client:
-        base = await client.get(url=base_url)
+    async with httpx.AsyncClient() as client:
+        base = await client.get(url=base_url, auth=auth)
         #try to login
-        login = await client.post(url=login_url, data=data, headers=headers)
+        login = await client.post(url=login_url,auth=auth, data=data, headers=headers)
         #if login.status_code != 200:
         #    raise Exception('fail to login.')
         """
