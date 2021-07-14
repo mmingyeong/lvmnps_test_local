@@ -21,15 +21,18 @@ async def main():
     host = '163.180.145.123'
     userid = 'admin'
     password = 'irlab'
-    #scheme = 'http'
-    #base_url = '%s://%s' % (scheme, host)
-
-    dli = ps.PowerSwitch(host=host, userid=userid, password=password)
+    
+    tasks = []
+    dli = ps.LVMPowerSwitch(host=host, userid=userid, password=password)
     await dli.add_client()
-    #await dli.geturl()
-    #await dli.puturl()
-    await dli.on(1)
-    #await dli.off(3)
-    #await dli.cycle(outlet_number=1)
+    #await dli.on(3)
+    #await dli.on(4)
+    #await dli.off()
+    #await dli.cycle()
+    get = await dli.getstatus()
+    print(get)
+    #tasks.append(dli.on())
+    #tasks.append(dli.on())
+    #await asyncio.gather(*tasks)
 
 asyncio.run(main())
