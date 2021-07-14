@@ -13,7 +13,7 @@
 #base_url = '%s://%s' % (scheme, host)
 
 import asyncio
-import powerswitch as ps
+import lvmpower as ps
 
 async def main():
     
@@ -27,10 +27,11 @@ async def main():
     await dli.add_client()
     #await dli.on(3)
     #await dli.on(4)
-    #await dli.off()
+    await dli.off()
     #await dli.cycle()
-    get = await dli.getstatus()
-    print(get)
+    
+    #get = await dli.getstatus()
+    #print(get)
     #tasks.append(dli.on())
     #tasks.append(dli.on())
     #await asyncio.gather(*tasks)
