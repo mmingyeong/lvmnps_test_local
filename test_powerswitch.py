@@ -23,17 +23,19 @@ async def main():
     password = 'irlab'
     
     tasks = []
-    dli = ps.LVMPowerSwitch(host=host, userid=userid, password=password)
+    dli = ps.LVMPowerSwitch(hostname=host, userid=userid, password=password)
     await dli.add_client()
-    #await dli.on(3)
-    #await dli.on(4)
-    await dli.off()
-    #await dli.cycle()
-    
-    #get = await dli.getstatus()
-    #print(get)
-    #tasks.append(dli.on())
-    #tasks.append(dli.on())
+    #await dli.outlet()
+
+    #await dli.onall()
+    #await dli.on('Outlet 5')
+    #await dli.offall()
+    #await dli.off('Outlet 1')
+    await dli.printstatus()
+    await dli.close()
+
+    #tasks.append(await dli.offall())
+    #tasks.append(await dli.printstatus())
     #await asyncio.gather(*tasks)
 
 asyncio.run(main())
