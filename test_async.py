@@ -34,8 +34,8 @@ async def main():
         """
         
         print(base)
-        print(base.text)
+        #print(base.text)
         print(login)
-    #print(login.text)
+        #print(login.text)
 
 asyncio.run(main())
