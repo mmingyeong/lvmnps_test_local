@@ -13,7 +13,7 @@
 #base_url = '%s://%s' % (scheme, host)
 
 import asyncio
-import powerswitch as ps
+import lvmpower as ps
 
 async def main():
     
@@ -21,15 +21,21 @@ async def main():
     host = '163.180.145.123'
     userid = 'admin'
     password = 'irlab'
-    #scheme = 'http'
-    #base_url = '%s://%s' % (scheme, host)
-
-    dli = ps.PowerSwitch(host=host, userid=userid, password=password)
+    
+    tasks = []
+    dli = ps.LVMPowerSwitch(hostname=host, userid=userid, password=password)
     await dli.add_client()
-    #await dli.geturl()
-    #await dli.puturl()
-    await dli.on(1)
-    #await dli.off(3)
-    #await dli.cycle(outlet_number=1)
+    #await dli.outlet()
+
+    #await dli.onall()
+    #await dli.on('Outlet 5')
+    #await dli.offall()
+    #await dli.off('Outlet 1')
+    await dli.printstatus()
+    await dli.close()
+
+    #tasks.append(await dli.offall())
+    #tasks.append(await dli.printstatus())
+    #await asyncio.gather(*tasks)
 
 asyncio.run(main())
